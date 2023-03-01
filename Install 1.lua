@@ -1,5 +1,6 @@
 --install reactor
-local REPOSITORY = "https://raw.githubusercontent.com/QueueLi/Reactor-1.12.2/main"
+local REPOSITORY = "https://raw.githubusercontent.com/Codermsk/reactor-s/main"
+
 local shell = require("shell")
 
 local libs = {
@@ -29,15 +30,15 @@ local libs = {
 shell.execute("md /home/images/reactor/")
 shell.execute("md md /lib/FormatModules")
 shell.execute("rm .shrc")
-shell.execute("wget -f https://raw.githubusercontent.com/QueueLi/Reactor-1.12.2/main/r.txt" .. " /home/Reactor.lua")
+shell.execute("wget -f https://raw.githubusercontent.com/Codermsk/reactor-s/main/r.txt" .. " /home/Reactor.lua")
 --Если вы что-то понимаете за юзеров то советую использовать 
 --shell.execute("useradd QueueLi")
 --shell.execute("useradd Fa11enX")
 --shell.execute("useradd JustKind")
-shell.execute("wget -f https://raw.githubusercontent.com/QueueLi/Reactor-1.12.2/main/IntR.lua" .. " /home/IntR.lua")
-shell.execute("wget -f https://raw.githubusercontent.com/QueueLi/Reactor-1.12.2/main/reboot" .. " /home/reboot")
-shell.execute("wget -f https://raw.githubusercontent.com/QueueLi/Reactor-1.12.2/main/off" .. " /home/off")
-shell.execute("wget -f https://raw.githubusercontent.com/QueueLi/Reactor-1.12.2/main/.shrc" .. " /home/.shrc")
+shell.execute("wget -f https://raw.githubusercontent.com/Codermsk/reactor-s/main/IntR.lua" .. " /home/IntR.lua")
+shell.execute("wget -f https://raw.githubusercontent.com/Codermsk/reactor-s/main/reboot" .. " /home/reboot")
+shell.execute("wget -f https://raw.githubusercontent.com/Codermsk/reactor-s/main/off" .. " /home/off")
+shell.execute("wget -f https://raw.githubusercontent.com/Codermsk/reactor-s/main/.shrc" .. " /home/.shrc")
 
 for i = 1, #libs do
 		shell.execute("wget -f " ..  libs[i].url .. " " .. libs[i].path)
