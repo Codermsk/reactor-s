@@ -81,7 +81,7 @@ local function drawStatic()
 		buffer.setResolution(90, 30)
 		buffer.clear(0xdcdcdc)
 buffer.drawRectangle(3, 2, 86, 28, 0xFFFFFF, 0, " ")
-buffer.drawText(16, 1, 0, "Контроль реакторного комплекса РГ")
+buffer.drawText(16, 1, 0, "Контроль реакторов")
 		buffer.drawRectangle(4, 3, 56, 19, 0xBFBFBF, 0, " ") -- Фон реактора
 		
 		
@@ -162,7 +162,7 @@ widgets[47][1] = widgets[52][1] -- поменять местами 48 с 52
         buffer.drawText(61, 2 + i, (15 - #consoleLines + i) * 0x111111, consoleLines[i])
     end
 		
-		buffer.drawText(66, 24, 0, "Порог лазурита: " .. Plaz)
+		buffer.drawText(66, 24, 0, "Порог хладагента: " .. Plaz)
 		buffer.drawRectangle(60, 23, 4, 2, 0xCCCCCC, 0, " ") -- +
 		buffer.drawText(60, 23, 0x00FF00, "__|__")
 		buffer.drawText(60, 24, 0x00FF00, "  |  ")
@@ -315,22 +315,22 @@ local function stop()
 	
 	sizes = com.me_interface.getItemsInNetwork()[1].size --me_interface.getItemsInNetwork('minecraft:lapis_block')[1].size
 	buffer.drawRectangle(61, 15, 27, 3, 0x111111, 0, " ") --Колличество Лазурита
-			buffer.drawText(66, 16, 0x00FF00, 'Лазурит: ' .. sizes)
+			buffer.drawText(66, 16, 0x00FF00, 'Хладагент: ' .. sizes)
 	while sizes < Plaz  do
 	
 	stop()
-		  message("Ошбика! Лазурита!")
+		  message("Ошбика! Хладагента!")
 		  message("Ожидание... 60 сек")
 		  computer.beep(500, 1)
 		  buffer.drawRectangle(61, 15, 27, 3, 0x111111, 0, " ") --Колличество Лазурита
-			buffer.drawText(66, 16, 0x00FF00, 'Лазурит: ' .. sizes)
+			buffer.drawText(66, 16, 0x00FF00, 'Хладагент: ' .. sizes)
 		  wait(60)
 		sizes = com.me_interface.getItemsInNetwork()[1].size 
 				
     end
-		  message("Лазурита ОК ...")
+		  message("Хладагента ОК ...")
 			buffer.drawRectangle(61, 15, 27, 3, 0x111111, 0, " ") --Колличество Лазурита
-			buffer.drawText(66, 16, 0x00FF00, 'Лазурит: ' .. sizes)
+			buffer.drawText(66, 16, 0x00FF00, 'Хладагент: ' .. sizes)
 		 -- wait(59)
 		buffer.drawChanges()
 	timer = 0		
